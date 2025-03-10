@@ -2,12 +2,13 @@
 #include <raylib.h>
 #define NUM_FRAMES 3
 
-const int screenWidth = 500;
-const int screenHeight = 600;
+const int screenWidth = 1024;
+const int screenHeight = 768;
 
 Texture2D texBackground;
 Texture2D texToast;
 Texture2D texFridge;
+Texture2D texWash;
 
 void GameStartup() {
 	//Image imgBackground = LoadImage("assets/background.png");
@@ -30,6 +31,13 @@ void GameUpdate() {
 		texFridge = LoadTextureFromImage(imgFridge);
 		    DrawTexture(texFridge, screenWidth/2 - texFridge.width/2, screenHeight/2 - texFridge.height/2 - 40, WHITE);
 		    UnloadImage(imgFridge);
+		}
+
+	if (IsKeyDown(KEY_W)) {
+		Image imgWash = LoadImage("assets/wash.png");
+		texWash = LoadTextureFromImage(imgWash);
+		    DrawTexture(texWash, screenWidth/4 - texWash.width/4, screenHeight/4 - texWash.height/4 - 40, WHITE);
+		    UnloadImage(imgWash);
 		}
 }
 
