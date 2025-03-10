@@ -10,6 +10,8 @@ Texture2D texToast;
 Texture2D texFridge;
 Texture2D texWash;
 
+int pullNum = 0;
+
 void GameStartup() {
 	//Image imgBackground = LoadImage("assets/background.png");
 	//texBackground = LoadTextureFromImage(imgBackground);
@@ -18,22 +20,27 @@ void GameStartup() {
 }
 
 void GameUpdate() {
+	//int pullNum = 0;
 
-	if (IsKeyDown(KEY_SPACE)) {
+	if (IsKeyPressed(KEY_R)){
+		pullNum = GetRandomValue(1,3);
+	}
+
+	if (pullNum == 1){
 		Image imgToast = LoadImage("assets/toast.png");
 		texToast = LoadTextureFromImage(imgToast);
 		    DrawTexture(texToast, screenWidth/2 - texToast.width/2, screenHeight/2 - texToast.height/2 - 40, WHITE);
 		    UnloadImage(imgToast);
 		}
 
-	if (IsKeyDown(KEY_K)) {
+	if (pullNum == 2) {
 		Image imgFridge = LoadImage("assets/fridge.jpg");
 		texFridge = LoadTextureFromImage(imgFridge);
 		    DrawTexture(texFridge, screenWidth/2 - texFridge.width/2, screenHeight/2 - texFridge.height/2 - 40, WHITE);
 		    UnloadImage(imgFridge);
 		}
 
-	if (IsKeyDown(KEY_W)) {
+	if (pullNum == 3) {
 		Image imgWash = LoadImage("assets/wash.png");
 		texWash = LoadTextureFromImage(imgWash);
 		    DrawTexture(texWash, screenWidth/4 - texWash.width/4, screenHeight/4 - texWash.height/4 - 40, WHITE);
@@ -64,7 +71,6 @@ int main () {
 		ClearBackground(GREEN);
 
 		GameRender();
-
 		EndDrawing();
 	}
 
