@@ -6,30 +6,26 @@ const int screenWidth = 500;
 const int screenHeight = 600;
 
 Texture2D texBackground;
-
+Texture2D texToast;
 
 void GameStartup() {
-	
+	//Image imgBackground = LoadImage("assets/background.png");
+	//texBackground = LoadTextureFromImage(imgBackground);
+	//UnloadImage(imgBackground);
 
 }
 
 void GameUpdate() {
-	Image imgBackground = LoadImage("assets/background.png");
-	texBackground = LoadTextureFromImage(imgBackground);
-	UnloadImage(imgBackground);
 
-	//load button texture
-	Texture2D button = LoadTexture("assets/button.png");
-	// define frame rectangle to draw
-	float frameHeight = (float) button.height/NUM_FRAMES;
-	Rectangle sourceRec = {0, 0, (float) button.width, frameHeight};
-	Rectangle btnBounds = { screenWidth/2.0f - button.width/2.0f, screen
-
+	if (IsKeyDown(KEY_SPACE)) {
+		Image imgToast = LoadImage("assets/toast.png");
+		texToast = LoadTextureFromImage(imgToast);
+		    DrawTexture(texToast, screenWidth/2 - texToast.width/2, screenHeight/2 - texToast.height/2 - 40, WHITE);
+		}
 }
 
 void GameRender() {
 	DrawTexture (texBackground, 0, 0, RAYWHITE);
-
 }
 
 void GameShutdown() {
