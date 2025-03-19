@@ -6,9 +6,6 @@
  const int screenHeight = 768;
 
 
- //Image imgBackground = LoadImage("assets/background.png");
- //texBackground = LoadTextureFromImage(imgBackground);
- //UnloadImage(imgBackground);
 
 
 
@@ -32,6 +29,10 @@
          Texture2D texFridge = LoadTextureFromImage(fridge);
          UnloadImage(wash);
 
+
+	 Image imgBackground = LoadImage("assets/background.png");
+	 Texture2D texBackground = LoadTextureFromImage(imgBackground);
+	 UnloadImage(imgBackground);
 
  //      if (IsKeyDown(KEY_SPACE)) {
  //              image imgToast = LoadImage("assets/toast.png");
@@ -74,6 +75,8 @@
                  else if (num == 2) {
                          DrawTexture(texFridge, screenWidth/2 - texFridge.width/2, screenHeight/2 - texFridge.height/2 - 40,     WHITE);
                  }
+
+		 DrawTexture(texBackground, 0, 0, WHITE);
 
                  EndDrawing();
          }
