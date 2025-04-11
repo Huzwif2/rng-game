@@ -2,8 +2,8 @@
  #include <raylib.h>
  #define NUM_FRAMES 3
 
- const int screenWidth = 1024;
- const int screenHeight = 768;
+ const int screenWidth = 1200;
+ const int screenHeight = 660;
 
  int main() {
 
@@ -21,7 +21,7 @@
          Texture2D texToast = LoadTextureFromImage(toast);
          UnloadImage(toast);
 
-         Image wash = LoadImage("assets/wash.png");
+         Image wash = LoadImage("assets/wash.jpg");
          Texture2D texWash = LoadTextureFromImage(wash);
          UnloadImage(wash);
 
