@@ -5,17 +5,17 @@
  const int screenWidth = 1024;
  const int screenHeight = 768;
 
-
-
-
-
-
  int main() {
 
          std::cout << "hello world!\n";
          InitWindow (screenWidth, screenHeight, "Kitchen RNG");
 
          SetTargetFPS(60);
+
+
+	 Image imgBackground = LoadImage("assets/background.jpg");
+	 Texture2D texBackground = LoadTextureFromImage(imgBackground);
+	 UnloadImage(imgBackground);
 
          Image toast = LoadImage("assets/toast.png");
          Texture2D texToast = LoadTextureFromImage(toast);
@@ -30,9 +30,6 @@
          UnloadImage(wash);
 
 
-	 Image imgBackground = LoadImage("assets/background.png");
-	 Texture2D texBackground = LoadTextureFromImage(imgBackground);
-	 UnloadImage(imgBackground);
 
  //      if (IsKeyDown(KEY_SPACE)) {
  //              image imgToast = LoadImage("assets/toast.png");
@@ -64,6 +61,7 @@
                  }
 
                  BeginDrawing();
+		 DrawTexture(texBackground, 0, 0, WHITE);
                  ClearBackground(GREEN);
 
                  if (num == 0) {
@@ -76,7 +74,6 @@
                          DrawTexture(texFridge, screenWidth/2 - texFridge.width/2, screenHeight/2 - texFridge.height/2 - 40,     WHITE);
                  }
 
-		 DrawTexture(texBackground, 0, 0, WHITE);
 
                  EndDrawing();
          }
