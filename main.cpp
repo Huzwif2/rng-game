@@ -21,35 +21,16 @@
          Texture2D texToast = LoadTextureFromImage(toast);
          UnloadImage(toast);
 
-         Image wash = LoadImage("assets/wash.jpg");
+         Image wash = LoadImage("assets/wash.png");
          Texture2D texWash = LoadTextureFromImage(wash);
          UnloadImage(wash);
 
          Image fridge = LoadImage("assets/fridge.jpg");
          Texture2D texFridge = LoadTextureFromImage(fridge);
-         UnloadImage(wash);
+         UnloadImage(fridge);
 
 
 
- //      if (IsKeyDown(KEY_SPACE)) {
- //              image imgToast = LoadImage("assets/toast.png");
- //              texToast = LoadTextureFromImage(imgToast);
- //                  DrawTexture(texToast, screenWidth/2 - texToast.width/2, screenHeight/2 - texToast.height/2 - 40, WHITE)    ;
- //                  UnloadImage(imgToast);
- //              }
- //
- //      if (iskeyDown(KEY_K)) {
- //              image imgFridge = LoadImage("assets/fridge.jpg");
- //              texFridge = LoadTextureFromImage(imgFridge);
- //                  DrawTexture(texFridge, screenWidth/2 - texFridge.width/2, screenHeight/2 - texFridge.height/2 - 40, WHI    TE);
- //                  UnloadImage(imgFridge);
- //              }
- //
- //      if (iskeyDown(KEY_W)) {
- //              image imgWash = LoadImage("assets/wash.png");
- //              texWash = LoadTextureFromImage(imgWash);
- //                  DrawTexture(texWash, screenWidth/4 - texWash.width/4, screenHeight/4 - texWash.height/4 - 40, WHITE);
- //                  UnloadImage(imgWash);
 
          int num = 0;
 
